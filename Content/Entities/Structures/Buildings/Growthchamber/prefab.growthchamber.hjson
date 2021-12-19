@@ -49,7 +49,7 @@ interactable:
 shop:
 {
 	name: "Growth chamber"
-	tags: fleshsmithing
+	tags: forge
 }
 
 workshop:
