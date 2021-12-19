@@ -1,0 +1,58 @@
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [6.000, 4.000]
+		offset: [0.000, 0.000]
+		mass: 2000.000
+		friction: 0.500
+		elasticity: 0.500
+		material: glass
+		layer: entity, building, support
+		mask: world
+	}
+}
+
+health:
+{
+	max: 23000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "growthchamber"
+	}
+	z: -100.000
+}
+
+transform:
+{
+
+}
+
+building:
+{
+
+}
+
+interactable:
+{
+	window_size: [700.000, 480.000]
+}
+
+shop:
+{
+	name: "Growth chamber"
+	tags: fleshsmithing
+}
+
+workshop:
+{
+
+}
