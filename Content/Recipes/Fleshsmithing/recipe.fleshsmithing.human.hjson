@@ -1,0 +1,60 @@
+{
+	name: "Human"
+	desc: "A dull and mindless human"
+	
+	icon:
+	{
+		texture: "human.head"
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	
+	min: 1
+	max: 5
+	step: 1
+	
+	flags: blueprintable
+	type: workshop
+	tags: forge
+	
+	requirements:
+	[
+		{
+			type: "resource"
+			material: "salt.life"
+			amount: 30.000
+		}
+		{
+			type: "resource"
+			material: "meat"
+			amount: 200.000
+		}
+		{
+			type: "work"
+			work: "mixing"
+			amount: 600.000
+			difficulty: 6.000
+		}
+		{
+			type: "work"
+			work: "assembling"
+			amount: 1000.000
+			difficulty: 12.000
+		}
+		{
+			type: "work"
+			work: "smithing"
+			amount: 600.000
+			difficulty: 6.000
+		}
+	]
+	
+	products:
+	[
+		{
+			type: "prefab"
+			prefab: "human"
+			amount: 1.000
+		}
+	]
+}
