@@ -63,6 +63,34 @@ namespace TC2.Base
 				}
 
 			));*/
+
+			definitions.Add(Modification.Definition.New<Organic.Data>
+			(
+				identifier: "organic.chitin_exoskeleton",
+				category: "Health",
+				name: "Chitin Exoskeleton",
+				description: "More durable and armored",
+
+				can_add: static (ref Modification.Context context, in Organic.Data data, ref Modification.Handle handle, Span<Modification.Handle> modifications) =>
+				{
+					return !context.GetComponent<Health.Data>().IsNull() && !modifications.HasModification(handle);
+				},
+
+				apply_0: static (ref Modification.Context context, ref Organic.Data data, ref Modification.Handle handle, Span<Modification.Handle> modifications) =>
+				{
+					ref var health = ref context.GetComponent<Health.Data>();
+					if (!health.IsNull())
+					{
+						health.armor += 20;
+						health.max *= 1.20f;
+					}
+				},
+
+				apply_1: static (ref Modification.Context context, ref Organic.Data data, ref Modification.Handle handle, Span<Modification.Handle> modifications) =>
+				{
+					context.requirements_new.Add(Crafting.Requirement.Resource("chitin", 20.00f));
+				}
+			));
 		}
 	}
 }
