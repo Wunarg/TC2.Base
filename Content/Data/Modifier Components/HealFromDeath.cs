@@ -19,7 +19,7 @@ namespace TC2.Base.Components
 		{
 			if (health.primary > 0.30f && health.secondary > 0.30f)
 			{
-				orgState.consciousness_shared_new += 0.5f;
+				//orgState.consciousness_shared_new += 0.5f;
 				orgState.consciousness_shared += 0.5f;
 				entity.SyncComponent<Organic.State>(ref orgState);
 			}

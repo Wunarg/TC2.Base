@@ -440,6 +440,21 @@ namespace TC2.Base
 					context.requirements_new.Add(Crafting.Requirement.Resource("chitin", 10.00f));
 				}
 			));
+
+			definitions.Add(Modification.Definition.New<Flyer.Data>
+			(
+				identifier: "flyer.clipped_wings",
+				category: "Flyer",
+				name: "Clipped Wings",
+				description: "Flies half as fast",
+
+				apply_0: static (ref Modification.Context context, ref Flyer.Data data, ref Modification.Handle handle, Span<Modification.Handle> modifications) =>
+				{
+					data.max_speed *= 0.5f;
+				}
+
+				//No cost cause this is mostly a downside (if you really want maybe small work cost)
+			));
 		}
 	}
 }
