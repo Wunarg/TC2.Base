@@ -44,25 +44,26 @@ namespace TC2.Base
 				}
 			));
 
-			/*definitions.Add(Modification.Definition.New<RapidBiorhythem.Data>
-			(
-				identifier: "rapidbiorhythem.stabelized_aging",
-				category: "Organic",
-				name: "Stabelized Aging",
-				description: "Ages slower",
-
-				apply_0: static (ref Modification.Context context, ref RapidBiorhythem.Data data, ref Modification.Handle handle, Span<Modification.Handle> modifications) =>
-				{
-					data.age_per_tick -= Maths.Clamp(0.01f, 0.00f, data.age_per_tick);
-					//if you really want to use 5 slots and a crap ton of order then you can stabelize aging
-				},
-
-				apply_1: static (ref Modification.Context context, ref RapidBiorhythem.Data data, ref Modification.Handle handle, Span<Modification.Handle> modifications) =>
-				{
-					context.requirements_new.Add(Crafting.Requirement.Resource("salt.order", 20.00f));
-				}
-
-			));*/
+			//Commented out until order salt exists
+			//definitions.Add(Modification.Definition.New<RapidBiorhythem.Data>
+			//(
+			//	identifier: "rapidbiorhythem.stabelized_aging",
+			//	category: "Organic",
+			//	name: "Stabelized Aging",
+			//	description: "Ages slower",
+			//
+			//	apply_0: static (ref Modification.Context context, ref RapidBiorhythem.Data data, ref Modification.Handle handle, Span<Modification.Handle> modifications) =>
+			//	{
+			//		data.age_per_tick -= Maths.Clamp(0.01f, 0.00f, data.age_per_tick);
+			//		//if you really want to use 5 slots and a crap ton of order then you can stabelize aging
+			//	},
+			//
+			//	apply_1: static (ref Modification.Context context, ref RapidBiorhythem.Data data, ref Modification.Handle handle, Span<Modification.Handle> modifications) =>
+			//	{
+			//		context.requirements_new.Add(Crafting.Requirement.Resource("salt.order", 20.00f));
+			//	}
+			//
+			//));
 
 			definitions.Add(Modification.Definition.New<Organic.Data>
 			(
