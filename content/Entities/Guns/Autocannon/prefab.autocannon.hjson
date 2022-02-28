@@ -1,3 +1,9 @@
+$name: "Autocannon"
+$desc: 
+	'''
+	A powerful automatic cannon to be mounted on vehicles.
+	'''
+	
 $tags: []
 
 body:
@@ -37,6 +43,8 @@ gun:
 	action: blowback
 	type: autocannon
 	feed: magazine
+
+	shake_amount: 0.600
 	
 	@inventory1:
 	{
@@ -66,6 +74,14 @@ holdable:
 	offset: [-0.900, 0.100]
 	radius: 0.000
 	flags: disable_parent_facing
+
+	force_multiplier: 4.000
+	torque_multiplier: 1.000
+}
+
+attachable:
+{
+	offset: [-0.900, 0.100]
 
 	force_multiplier: 4.000
 	torque_multiplier: 1.000
