@@ -24,19 +24,19 @@ namespace TC2.Base.Components
 			{
 				health.max -= data.age_per_tick;
 
-				if (health.primary < 1.0f)
+				if (health.durability < 1.0f)
 				{
 					var heal_normalized = Maths.Normalize(data.heal_amount_primary * 0.25f, health.max);				
-					var heal_amount = MathF.Min(Maths.Clamp(1.00f - health.primary, 0.00f, 1.00f), heal_normalized);
-					health.primary += heal_amount;
+					var heal_amount = MathF.Min(Maths.Clamp(1.00f - health.durability, 0.00f, 1.00f), heal_normalized);
+					health.durability += heal_amount;
 					entity.MarkModified<Health.Data>(sync: true);
 				}
 
-				if (health.secondary < 1.0f)
+				if (health.integrity < 1.0f)
 				{
 					var heal_normalized = Maths.Normalize(data.heal_amount_secondary * 0.25f, health.max);				
-					var heal_amount = MathF.Min(Maths.Clamp(1.00f - health.secondary, 0.00f, 1.00f), heal_normalized);
-					health.secondary += heal_amount;
+					var heal_amount = MathF.Min(Maths.Clamp(1.00f - health.integrity, 0.00f, 1.00f), heal_normalized);
+					health.integrity += heal_amount;
 					entity.MarkModified<Health.Data>(sync: true);
 				}
 			}

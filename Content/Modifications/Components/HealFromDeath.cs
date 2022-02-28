@@ -17,7 +17,7 @@ namespace TC2.Base.Components
 		[Source.Owned] ref Organic.Data orgData, [Source.Owned] in HealFromDeath.Data data, 
 		[Source.Owned] ref Organic.State orgState, [Source.Owned] in Health.Data health)
 		{
-			if (health.primary > 0.30f && health.secondary > 0.30f)
+			if (health.integrity > 0.30f && health.durability > 0.30f)
 			{
 				//orgState.consciousness_shared_new += 0.5f;
 				orgState.consciousness_shared += 0.5f;

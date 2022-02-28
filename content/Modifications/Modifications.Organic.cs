@@ -28,7 +28,7 @@ namespace TC2.Base
 			definitions.Add(Modification.Definition.New<Organic.Data>
 			(
 				identifier: "organic.rapidbiorhythem",
-				category: "Organic",
+				category: "Protection",
 				name: "Rapid Biorhythem",
 				description: "Heals over time but slowly ages loosing max health",
 			
@@ -68,7 +68,7 @@ namespace TC2.Base
 			definitions.Add(Modification.Definition.New<Organic.Data>
 			(
 				identifier: "organic.chitin_exoskeleton",
-				category: "Health",
+				category: "Protection",
 				name: "Chitin Exoskeleton",
 				description: "More durable and armored",
 
