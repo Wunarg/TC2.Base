@@ -12,6 +12,7 @@ namespace TC2.Base
 			Modification.OnInitialize += RegisterMedkitModifications;
 			Modification.OnInitialize += RegisterExplosiveModifications;
 			Modification.OnInitialize += RegisterOrganicModifications;
+			Modification.OnInitialize += RegisterControlModifications;
 		}
 
 		protected override void OnInitialize(ModContext context)
