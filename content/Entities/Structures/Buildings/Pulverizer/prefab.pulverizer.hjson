@@ -3,6 +3,7 @@ $tags: []
 body:
 {
 	type: static
+	inventory_weight_multiplier: 0.500
 	
 	@shape.box:
 	{
@@ -60,7 +61,7 @@ pulverizer.state:
 
 }
 
-wheel:
+axle:
 {
 	offset: [0.000, 0.000]
 	mass: 100.000
@@ -90,4 +91,7 @@ sound.emitter:
 	file: "pulverizer_spin_loop"
 	volume: 0.000
 	pitch: 0.000
+
+	size: 2.000
+	size_max_modifier: 0.800
 }
