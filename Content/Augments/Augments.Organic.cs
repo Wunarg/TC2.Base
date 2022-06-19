@@ -28,7 +28,7 @@ namespace TC2.Base
 			definitions.Add(Augment.Definition.New<Organic.Data>
 			(
 				identifier: "organic.rapidbiorhythem",
-				category: "Protection",
+				category: "Organic",
 				name: "Rapid Biorhythem",
 				description: "Heals over time but slowly ages loosing max health",
 			
