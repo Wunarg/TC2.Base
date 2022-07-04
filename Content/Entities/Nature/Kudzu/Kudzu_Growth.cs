@@ -25,12 +25,12 @@ namespace TC2.Base.Components
 	public static class Kudzu_Growth
 	{
 		[ISystem.Update(ISystem.Mode.Single, 0f, 0)]
-		public static void OnUpdate(ISystem.Info info, Entity entity, [Source.Owned] in Data kudzu_growth)
+		public static void OnUpdate(ISystem.Info info, Entity entity, [Source.Owned] in Data kudzu_growth, [Source.Owned] in Transform.Data transform)
 		{
 			ref Region.Data region = ref info.GetRegion();
 			var terrain = region.GetTerrainHandle();
 			
-			val pos = this.pos;
+			var pos = transform.position;
 
 			static void SetTileFunc(ref Tile tile, int x, int y, byte mask, ref (Block.Handle block, TileFlags tile_flags, int count) arg)
 			{
@@ -44,7 +44,7 @@ namespace TC2.Base.Components
 				}
 			}
 
-			var args = (block: product.block, tile_flags: tile_flags, count: 0);
+			var args = (null, null , count: 0);
 			terrain.IterateRect(pos, App.pixels_per_unit, ref args, SetTileFunc, dirty_flags: Chunk.DirtyFlags.Sync | Chunk.DirtyFlags.Neighbours | Chunk.DirtyFlags.Collider, iteration_flags: Terrain.IterationFlags.Create_If_Empty);
 											
 					
