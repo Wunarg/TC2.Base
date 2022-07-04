@@ -1,0 +1,52 @@
+$name: "Kudzu Core"
+$desc: "Its growing everywhere"
+body:
+{
+	type: static
+	
+	@shape.circle:
+	{
+		offset: [0.000, 0.000]
+		radius: 0.500
+		friction: 0.950
+		elasticity: 0.500
+		material: foliage
+		layer: entity
+		mask: world
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 5000.000
+}
+
+kudzu_growth:
+{
+	
+}
+
+sprite.renderer:
+{
+	z: 50.000
+	texture: "Kudzu_core"
+}
+
+lamp:
+{
+	flicker: 0.000
+	
+	@light:
+	{
+		color: [1.000, 0.750, 0.100, 1.500]
+		offset: [0.000, -2.500]
+		scale: [80.000, 80.000]
+		intensity: 1.000
+		texture: "light_invsqr"
+	}
+}
