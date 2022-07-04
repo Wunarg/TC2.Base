@@ -26,15 +26,18 @@ health:
 	max: 5000.000
 }
 
-kudzu_growth:
+kudzugrowth:
 {
 	
 }
 
-sprite.renderer:
+animated.renderer:
 {
+	sprite:
+	{
+		texture: "kudzu_core"
+	}
 	z: 50.000
-	texture: "Kudzu_core"
 }
 
 lamp:
