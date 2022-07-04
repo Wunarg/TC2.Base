@@ -1,0 +1,38 @@
+{
+	name: "Kudzu"
+	desc: "Slowly eternally growing."
+	
+	material_type: soil
+	tile_flags: non_empty
+	flags: raw
+	
+	max_health: 100.000
+	smoothing: 0.100
+	mass: 3.000
+	friction: 0.700
+	elasticity: 0.900
+	stability: 0.300
+	
+	texture: "terrain_grass"
+	pattern: "pattern_soil"
+	
+	texture_scale: 1.710
+	texture_overshoot: 0.000
+
+	resources:
+	[
+		{
+			material: "wood"
+			quantity: 0.100
+		}
+	]
+
+	mappings:
+	[
+		{
+			color: "0xff633e2b"
+			tile_flags: none
+			meta: 0
+		}
+	]
+}
