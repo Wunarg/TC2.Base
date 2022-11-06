@@ -2,7 +2,7 @@
 
 namespace TC2.Base
 {
-	public sealed partial class ModInstance
+	public sealed partial class BaseMod
 	{
 		private static void RegisterExplosiveAugments(ref List<Augment.Definition> definitions)
 		{
@@ -140,6 +140,42 @@ namespace TC2.Base
 					ref var fuse = ref context.GetOrAddComponent<Fuse.Data>();
 					fuse.failure_chance = 0.05f;
 					fuse.time = 5.00f;
+				}
+			));
+
+			definitions.Add(Augment.Definition.New<Explosive.Data>
+			(
+				identifier: "explosive.smoke",
+				category: "Explosive",
+				name: "Smoke Explosive",
+				description: "Replaces all the explosive material with sulfur, which produces a lot of smoke.",
+
+				apply_1: static (ref Augment.Context context, ref Explosive.Data data, ref Augment.Handle handle, Span<Augment.Handle> augments) =>
+				{
+					data.damage_terrain = 0.00f;
+					data.damage_entity = 0.00f;
+					data.power = 1.00f;
+					data.radius = 30.00f;
+					data.pitch = 2.00f;
+					data.volume = 0.01f;
+					data.smoke_amount = 10.00f;
+					data.sparks_amount = 0.10f;
+
+					var amount_total = 0.00f;
+					foreach (ref var requirement in context.requirements_new)
+					{
+						if (requirement.type == Crafting.Requirement.Type.Resource)
+						{
+							ref var material = ref requirement.material.GetDefinition();
+							if (material.flags.HasAny(Material.Flags.Explosive))
+							{
+								amount_total += requirement.amount;
+								requirement = default;
+							}
+						}
+					}
+					
+					context.requirements_new.Add(Crafting.Requirement.Resource("sulfur", amount_total));				
 				}
 			));
 		}
